@@ -1,0 +1,35 @@
+# Python environments, build products and tool caches
+.venv/
+venv/
+.uv-cache/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
+
+# Editors, operating systems and local credentials
+.idea/
+.vscode/
+*.swp
+*~
+.DS_Store
+Thumbs.db
+.env
+.env.*
+
+# Keep reporting packages and run results local.
+/private/*
+!/private/README.md
+/output/*
+!/output/README.md
+
+# Track provenance for public reference files.
+/reference/*
+!/reference/README.md
+!/reference/manifest.csv

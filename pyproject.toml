@@ -1,0 +1,27 @@
+[project]
+name = "s2movement"
+version = "0.0.0"
+description = "Local Solvency II movement reconciliation for actuarial review"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = []
+
+[dependency-groups]
+dev = ["mypy", "pytest", "ruff"]
+
+[build-system]
+requires = ["uv_build==0.13.8"]
+build-backend = "uv_build"
+
+[tool.ruff]
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "I", "B", "UP"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

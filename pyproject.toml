@@ -4,10 +4,26 @@ version = "0.0.0"
 description = "Local Solvency II movement reconciliation for actuarial review"
 readme = "README.md"
 requires-python = ">=3.12,<3.13"
-dependencies = []
+dependencies = [
+    "anthropic>=0.80,<1",
+    "arelle-release==2.47.5",
+    "openpyxl>=3.1.5",
+    "pydantic>=2.14.4",
+    "python-docx>=1.2,<2",
+    "xlsxwriter>=3.3.4",
+]
+
+[project.scripts]
+s2movement = "s2movement.cli:main"
 
 [dependency-groups]
-dev = ["mypy", "pytest", "ruff"]
+dev = [
+    "mypy",
+    "pypdf>=6,<7",
+    "pytest",
+    "ruff",
+    "types-openpyxl>=3.1.5.20261122",
+]
 
 [build-system]
 requires = ["uv_build==0.13.8"]
@@ -22,6 +38,14 @@ select = ["E", "W", "F", "I", "B", "UP"]
 [tool.mypy]
 python_version = "3.12"
 strict = true
+
+[[tool.mypy.overrides]]
+module = ["xlsxwriter"]
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = ["docx", "docx.*", "anthropic", "anthropic.*", "pypdf", "pypdf.*"]
+ignore_missing_imports = true
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

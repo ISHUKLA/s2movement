@@ -1,0 +1,113 @@
+{
+  "version": "1",
+  "entries": [
+    {
+      "id": "balance_sheet_movement",
+      "flag_prefixes": ["movement_money/S.02.01", "movement_money/excess"],
+      "conditions": [{"kind": "flag_present"}],
+      "question": "Which reported asset and liability buckets explain the observed change in excess assets over liabilities?",
+      "hypotheses": ["Transactions and revaluations may both affect the reported asset movement."],
+      "artifact": "balance-sheet movement reconciliation and investment holdings roll-forward",
+      "comparison": "Compare opening and closing holdings, transactions and valuation changes with each S.02.01 bucket and the explicit bridge residual."
+    },
+    {
+      "id": "own_funds_movement",
+      "flag_prefixes": ["movement_money/S.23.01", "movement_money/eligible_own_funds", "movement_money/opening_excess_to_eligible", "movement_money/closing_excess_to_eligible"],
+      "conditions": [{"kind": "flag_present"}],
+      "question": "How do the reported own-funds adjustments and tier eligibility amounts reconcile to the change in eligible own funds?",
+      "hypotheses": ["A change in reported deductions or eligibility restrictions may alter eligible own funds without changing excess assets by the same amount."],
+      "artifact": "own-funds classification and eligibility reconciliation",
+      "comparison": "Compare the opening and closing S.23.01 deductions, available tiers, eligible tiers and SCR with the signed own-funds bridge lines."
+    },
+    {
+      "id": "ratio_movement",
+      "flag_prefixes": ["movement_ratio"],
+      "conditions": [{"kind": "flag_present"}],
+      "question": "Which of the cited own-funds, SCR and interaction terms accounts for the observed solvency-ratio change?",
+      "hypotheses": ["A simultaneous movement in eligible own funds and SCR can create a nonzero interaction term."],
+      "artifact": "solvency-ratio bridge and eligible-own-funds/SCR reconciliation",
+      "comparison": "Recalculate the three exact ratio effects from both dates' reported eligible own funds and SCR and compare their sum with the reported ratio movement."
+    },
+    {
+      "id": "scr_drilldown_movement",
+      "flag_prefixes": ["movement_money/S.26.01", "movement_money/S.26.02", "movement_money/S.26.03", "movement_money/headline_scr"],
+      "conditions": [{"kind": "flag_present"}],
+      "question": "Does the reported submodule detail explain the top-level SCR movement without changing that total?",
+      "hypotheses": ["Changes in the reported submodule stress results may contribute to their parent module."],
+      "artifact": "Standard Formula submodule calculation worksheets",
+      "comparison": "Compare each S.26 submodule result with its parent S.25 module and reconcile the signed changes to the S.23 headline SCR."
+    },
+    {
+      "id": "linked_fund_movement",
+      "flag_prefixes": ["linked_divergence", "movement_money/S.02.01.01.01/R0220"],
+      "conditions": [{"kind": "flag_present"}],
+      "question": "How do the linked asset and linked liability movements reconcile when reviewed together?",
+      "hypotheses": ["Fund returns and net subscriptions may both contribute to the linked balance movement.", "Contract exits or changes in guarantee values may contribute to the associated best estimate movement."],
+      "artifact": "unit-fund attribution report",
+      "comparison": "Compare fund returns with net subscriptions and withdrawals, then reconcile units and unit values to the reported linked assets and technical provisions."
+    },
+    {
+      "id": "best_estimate_movement",
+      "flag_prefixes": ["movement_money/S.12.01", "movement_money/life_net_tp", "movement_money/health_slt_net_tp"],
+      "conditions": [{"kind": "flag_present"}],
+      "question": "Which in-force and assumption movements should be reconciled to the reported best estimate change?",
+      "hypotheses": ["New business or exits may change the in-force exposure.", "Assumption or discount-curve changes may alter the valuation of the same exposure."],
+      "artifact": "actuarial analysis-of-change waterfall",
+      "comparison": "Compare the opening-to-closing model-point roll-forward with isolated assumption and economic-basis runs, then reconcile their sum to the QRT movement."
+    },
+    {
+      "id": "scr_risk_movement",
+      "flag_prefixes": ["movement_money/scr_modules", "movement_money/S.25.01"],
+      "conditions": [{"kind": "flag_present"}],
+      "question": "Which exposure and stress-result changes correspond to the reported SCR module movement?",
+      "hypotheses": ["Exposure mix or stress sensitivity may have changed."],
+      "artifact": "Standard Formula module calculation worksheets",
+      "comparison": "Compare module inputs and stress outputs on a constant-portfolio basis and reconcile them to the S.25.01 module results."
+    },
+    {
+      "id": "missing_scr_detail",
+      "flag_prefixes": ["movement_money/S.23.01.01.01/R0580"],
+      "conditions": [{"kind": "flag_present"}, {"kind": "missing_template", "template": "S.25.01"}],
+      "question": "Which risk modules account for the headline SCR movement once S.25.01 is supplied?",
+      "hypotheses": ["Market or underwriting risk could account for the net movement; the current package does not separate them."],
+      "artifact": "missing S.25.01 module schedule",
+      "comparison": "Obtain both annual S.25.01 schedules and reconcile their module, diversification and adjustment movements to the S.23.01 headline SCR movement."
+    },
+    {
+      "id": "tax_capacity",
+      "flag_prefixes": ["lac_dt_direction", "movement_money/S.02.01.01.01/R0040", "tier_constraints"],
+      "conditions": [{"kind": "flag_present"}],
+      "question": "How do the deferred-tax balance, LAC-DT adjustment and binding tier limit interact in the sign-off assessment?",
+      "hypotheses": ["Changes in temporary differences or in stressed future taxable profits may affect the observed tax measures."],
+      "artifact": "LAC-DT recoverability study and deferred-tax schedule",
+      "comparison": "Compare stressed tax losses and forecast taxable profits with the DTA movement, then reconcile the eligible Tier 3 amount to the reported limit."
+    },
+    {
+      "id": "ltg_basis",
+      "flag_prefixes": ["measure_status", "measure_impact", "movement_money/S.22.01"],
+      "conditions": [{"kind": "flag_present"}],
+      "question": "How much of the reported technical-provision movement remains after comparing the two LTG bases?",
+      "hypotheses": ["A changed volatility adjustment or transitional basis may contribute to the observed valuation difference."],
+      "artifact": "LTG impact and valuation-basis reconciliation",
+      "comparison": "Compare the S.22.01 impacts and the underlying valuation runs on a common basis for both dates."
+    },
+    {
+      "id": "premiums_claims",
+      "flag_prefixes": ["premium_claim_scale", "premium_claim_vs_bel", "movement_money/S.05.01"],
+      "conditions": [{"kind": "flag_present"}],
+      "question": "How do the reported premiums written or claims incurred relate to the best-estimate movement?",
+      "hypotheses": ["Volume, timing or reserve changes may create the observed difference between accounting measures and best estimate."],
+      "artifact": "policy and claims ledgers",
+      "comparison": "Compare premiums written with policy counts and billed amounts, or claims incurred with claim counts, costs and reserve movements, by the same line of business."
+    },
+    {
+      "id": "foreseeable_dividend_change",
+      "flag_prefixes": ["movement_money/eligible_own_funds/foreseeable_dividends_distributions_charges"],
+      "conditions": [{"kind": "flag_present"}, {"kind": "nonzero_either", "condition_id": "reported_foreseeable_dividends"}],
+      "question": "Does the reported foreseeable-dividend deduction explain part of the eligible own-funds movement?",
+      "hypotheses": ["A change in foreseeable dividends may contribute to the reported deduction."],
+      "artifact": "board-approved dividend proposal and own-funds reconciliation",
+      "comparison": "Compare the approved dividend amounts at both dates with the separately reported deduction and reconcile to eligible own funds."
+    }
+  ]
+}

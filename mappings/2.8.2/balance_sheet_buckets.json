@@ -1,0 +1,1617 @@
+{
+  "taxonomy": "2.8.2",
+  "requirements": [
+    "R-016",
+    "R-022"
+  ],
+  "source": "cells.csv; source locations and verified relationships are recorded per row",
+  "column": "C0010",
+  "tables": [
+    "S.02.01.01.01",
+    "S.02.01.02.01"
+  ],
+  "policy": "Calculate each bucket from its reported roots. Children describe the same scope and are not added again.",
+  "buckets": [
+    {
+      "id": "investments",
+      "label": "Investments excluding linked assets",
+      "sign": 1,
+      "reported_roots": [
+        "R0070"
+      ],
+      "rows": [
+        "R0070",
+        "R0080",
+        "R0090",
+        "R0100",
+        "R0110",
+        "R0120",
+        "R0130",
+        "R0140",
+        "R0150",
+        "R0160",
+        "R0170",
+        "R0180",
+        "R0190",
+        "R0200",
+        "R0210"
+      ]
+    },
+    {
+      "id": "linked_assets",
+      "label": "Assets held for index-linked and unit-linked contracts",
+      "sign": 1,
+      "reported_roots": [
+        "R0220"
+      ],
+      "rows": [
+        "R0220"
+      ]
+    },
+    {
+      "id": "technical_provisions",
+      "label": "Technical provisions",
+      "sign": -1,
+      "reported_roots": [
+        "R0510",
+        "R0600",
+        "R0690"
+      ],
+      "rows": [
+        "R0510",
+        "R0520",
+        "R0530",
+        "R0540",
+        "R0550",
+        "R0560",
+        "R0570",
+        "R0580",
+        "R0590",
+        "R0600",
+        "R0610",
+        "R0620",
+        "R0630",
+        "R0640",
+        "R0650",
+        "R0660",
+        "R0670",
+        "R0680",
+        "R0690",
+        "R0700",
+        "R0710",
+        "R0720",
+        "R0730"
+      ]
+    },
+    {
+      "id": "deferred_tax_assets",
+      "label": "Deferred tax assets",
+      "sign": 1,
+      "reported_roots": [
+        "R0040"
+      ],
+      "rows": [
+        "R0040"
+      ]
+    },
+    {
+      "id": "deferred_tax_liabilities",
+      "label": "Deferred tax liabilities",
+      "sign": -1,
+      "reported_roots": [
+        "R0780"
+      ],
+      "rows": [
+        "R0780"
+      ]
+    },
+    {
+      "id": "other_assets",
+      "label": "Other reported asset categories",
+      "sign": 1,
+      "reported_roots": [
+        "R0030",
+        "R0050",
+        "R0060",
+        "R0230",
+        "R0270",
+        "R0350",
+        "R0360",
+        "R0370",
+        "R0380",
+        "R0390",
+        "R0400",
+        "R0410",
+        "R0420"
+      ],
+      "rows": [
+        "R0010",
+        "R0020",
+        "R0030",
+        "R0050",
+        "R0060",
+        "R0230",
+        "R0240",
+        "R0250",
+        "R0260",
+        "R0270",
+        "R0280",
+        "R0290",
+        "R0300",
+        "R0310",
+        "R0320",
+        "R0330",
+        "R0340",
+        "R0350",
+        "R0360",
+        "R0370",
+        "R0380",
+        "R0390",
+        "R0400",
+        "R0410",
+        "R0420"
+      ]
+    },
+    {
+      "id": "other_liabilities",
+      "label": "Other reported liability categories",
+      "sign": -1,
+      "reported_roots": [
+        "R0740",
+        "R0750",
+        "R0760",
+        "R0770",
+        "R0790",
+        "R0800",
+        "R0810",
+        "R0820",
+        "R0830",
+        "R0840",
+        "R0850",
+        "R0880"
+      ],
+      "rows": [
+        "R0740",
+        "R0750",
+        "R0760",
+        "R0770",
+        "R0790",
+        "R0800",
+        "R0810",
+        "R0820",
+        "R0830",
+        "R0840",
+        "R0850",
+        "R0860",
+        "R0870",
+        "R0880"
+      ]
+    }
+  ],
+  "rows": {
+    "R0010": {
+      "kind": "component",
+      "bucket": "other_assets",
+      "columns": [
+        "C0020"
+      ],
+      "label": "Assets / Goodwill",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "G5",
+      "relationship_source": "",
+      "scope": "Statutory accounting C0020 only; C0010 is not reportable in the annotated template."
+    },
+    "R0020": {
+      "kind": "component",
+      "bucket": "other_assets",
+      "columns": [
+        "C0020"
+      ],
+      "label": "Assets / Deferred acquisition costs",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "G6",
+      "relationship_source": "",
+      "scope": "Statutory accounting C0020 only; C0010 is not reportable in the annotated template."
+    },
+    "R0030": {
+      "kind": "component",
+      "bucket": "other_assets",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Assets / Intangible assets",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F7",
+      "relationship_source": ""
+    },
+    "R0040": {
+      "kind": "component",
+      "bucket": "deferred_tax_assets",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Assets / Deferred tax assets",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F8",
+      "relationship_source": ""
+    },
+    "R0050": {
+      "kind": "component",
+      "bucket": "other_assets",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Assets / Pension benefit surplus",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F9",
+      "relationship_source": ""
+    },
+    "R0060": {
+      "kind": "component",
+      "bucket": "other_assets",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Assets / Property, plant & equipment held for own use",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F10",
+      "relationship_source": ""
+    },
+    "R0070": {
+      "kind": "subtotal",
+      "bucket": "investments",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Assets / Investments (other than assets held for index-linked and unit-linked contracts)",
+      "children": [
+        "R0080",
+        "R0090",
+        "R0100",
+        "R0130",
+        "R0180",
+        "R0190",
+        "R0200",
+        "R0210"
+      ],
+      "coefficients": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F11",
+      "relationship_source": "BV317_1-1 (Business Validation 2.8.2 row 3321)"
+    },
+    "R0080": {
+      "kind": "component",
+      "bucket": "investments",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Assets / Investments (other than assets held for index-linked and unit-linked contracts) / Property (other than for own use)",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F12",
+      "relationship_source": ""
+    },
+    "R0090": {
+      "kind": "component",
+      "bucket": "investments",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Assets / Investments (other than assets held for index-linked and unit-linked contracts) / Holdings in related undertakings, including participations",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F13",
+      "relationship_source": ""
+    },
+    "R0100": {
+      "kind": "subtotal",
+      "bucket": "investments",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Assets / Investments (other than assets held for index-linked and unit-linked contracts) / Equities",
+      "children": [
+        "R0110",
+        "R0120"
+      ],
+      "coefficients": [
+        1,
+        1
+      ],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F14",
+      "relationship_source": "BV318_1-1 (Business Validation 2.8.2 row 3320)"
+    },
+    "R0110": {
+      "kind": "component",
+      "bucket": "investments",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Assets / Investments (other than assets held for index-linked and unit-linked contracts) / Equities / Equities - listed",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F15",
+      "relationship_source": ""
+    },
+    "R0120": {
+      "kind": "component",
+      "bucket": "investments",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Assets / Investments (other than assets held for index-linked and unit-linked contracts) / Equities / Equities - unlisted",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F16",
+      "relationship_source": ""
+    },
+    "R0130": {
+      "kind": "subtotal",
+      "bucket": "investments",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Assets / Investments (other than assets held for index-linked and unit-linked contracts) / Bonds",
+      "children": [
+        "R0140",
+        "R0150",
+        "R0160",
+        "R0170"
+      ],
+      "coefficients": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F17",
+      "relationship_source": "BV319_1-1 (Business Validation 2.8.2 row 3319)"
+    },
+    "R0140": {
+      "kind": "component",
+      "bucket": "investments",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Assets / Investments (other than assets held for index-linked and unit-linked contracts) / Bonds / Government Bonds",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F18",
+      "relationship_source": ""
+    },
+    "R0150": {
+      "kind": "component",
+      "bucket": "investments",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Assets / Investments (other than assets held for index-linked and unit-linked contracts) / Bonds / Corporate Bonds",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F19",
+      "relationship_source": ""
+    },
+    "R0160": {
+      "kind": "component",
+      "bucket": "investments",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Assets / Investments (other than assets held for index-linked and unit-linked contracts) / Bonds / Structured notes",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F20",
+      "relationship_source": ""
+    },
+    "R0170": {
+      "kind": "component",
+      "bucket": "investments",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Assets / Investments (other than assets held for index-linked and unit-linked contracts) / Bonds / Collateralised securities",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F21",
+      "relationship_source": ""
+    },
+    "R0180": {
+      "kind": "component",
+      "bucket": "investments",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Assets / Investments (other than assets held for index-linked and unit-linked contracts) / Collective Investments Undertakings",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F22",
+      "relationship_source": ""
+    },
+    "R0190": {
+      "kind": "component",
+      "bucket": "investments",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Assets / Investments (other than assets held for index-linked and unit-linked contracts) / Derivatives",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F23",
+      "relationship_source": ""
+    },
+    "R0200": {
+      "kind": "component",
+      "bucket": "investments",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Assets / Investments (other than assets held for index-linked and unit-linked contracts) / Deposits other than cash equivalents",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F24",
+      "relationship_source": ""
+    },
+    "R0210": {
+      "kind": "component",
+      "bucket": "investments",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Assets / Investments (other than assets held for index-linked and unit-linked contracts) / Other investments",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F25",
+      "relationship_source": ""
+    },
+    "R0220": {
+      "kind": "component",
+      "bucket": "linked_assets",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Assets / Assets held for index-linked and unit-linked contracts",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F26",
+      "relationship_source": "BV320_1-1 (Business Validation 2.8.2 row 3318)"
+    },
+    "R0230": {
+      "kind": "subtotal",
+      "bucket": "other_assets",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Assets / Loans and mortgages",
+      "children": [
+        "R0240",
+        "R0250",
+        "R0260"
+      ],
+      "coefficients": [
+        1,
+        1,
+        1
+      ],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F27",
+      "relationship_source": "BV313_1-1 (Business Validation 2.8.2 row 3325)"
+    },
+    "R0240": {
+      "kind": "component",
+      "bucket": "other_assets",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Assets / Loans and mortgages / Loans on policies",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F28",
+      "relationship_source": ""
+    },
+    "R0250": {
+      "kind": "component",
+      "bucket": "other_assets",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Assets / Loans and mortgages / Loans and mortgages to individuals",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F29",
+      "relationship_source": ""
+    },
+    "R0260": {
+      "kind": "component",
+      "bucket": "other_assets",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Assets / Loans and mortgages / Other loans and mortgages",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F30",
+      "relationship_source": ""
+    },
+    "R0270": {
+      "kind": "subtotal",
+      "bucket": "other_assets",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Assets / Reinsurance recoverables from:",
+      "children": [
+        "R0280",
+        "R0310",
+        "R0340"
+      ],
+      "coefficients": [
+        1,
+        1,
+        1
+      ],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F31",
+      "relationship_source": "BV314_1-1 (Business Validation 2.8.2 row 3324)"
+    },
+    "R0280": {
+      "kind": "subtotal",
+      "bucket": "other_assets",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Assets / Reinsurance recoverables from: / Non-life and health similar to non-life",
+      "children": [
+        "R0290",
+        "R0300"
+      ],
+      "coefficients": [
+        1,
+        1
+      ],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F32",
+      "relationship_source": "BV315_1-1 (Business Validation 2.8.2 row 3323)"
+    },
+    "R0290": {
+      "kind": "component",
+      "bucket": "other_assets",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Assets / Reinsurance recoverables from: / Non-life and health similar to non-life / Non-life excluding health",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F33",
+      "relationship_source": ""
+    },
+    "R0300": {
+      "kind": "component",
+      "bucket": "other_assets",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Assets / Reinsurance recoverables from: / Non-life and health similar to non-life / Health similar to non-life",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F34",
+      "relationship_source": ""
+    },
+    "R0310": {
+      "kind": "subtotal",
+      "bucket": "other_assets",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Assets / Reinsurance recoverables from: / Life and health similar to life, excluding health and index-linked and unit-linked",
+      "children": [
+        "R0320",
+        "R0330"
+      ],
+      "coefficients": [
+        1,
+        1
+      ],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F35",
+      "relationship_source": "BV316_1-1 (Business Validation 2.8.2 row 3322)"
+    },
+    "R0320": {
+      "kind": "component",
+      "bucket": "other_assets",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Assets / Reinsurance recoverables from: / Life and health similar to life, excluding health and index-linked and unit-linked / Health similar to life",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F36",
+      "relationship_source": ""
+    },
+    "R0330": {
+      "kind": "component",
+      "bucket": "other_assets",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Assets / Reinsurance recoverables from: / Life and health similar to life, excluding health and index-linked and unit-linked / Life excluding health and index-linked and unit-linked",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F37",
+      "relationship_source": ""
+    },
+    "R0340": {
+      "kind": "component",
+      "bucket": "other_assets",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Assets / Reinsurance recoverables from: / Life index-linked and unit-linked",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F38",
+      "relationship_source": ""
+    },
+    "R0350": {
+      "kind": "component",
+      "bucket": "other_assets",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Assets / Deposits to cedants",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F39",
+      "relationship_source": ""
+    },
+    "R0360": {
+      "kind": "component",
+      "bucket": "other_assets",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Assets / Insurance and intermediaries receivables",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F40",
+      "relationship_source": ""
+    },
+    "R0370": {
+      "kind": "component",
+      "bucket": "other_assets",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Assets / Reinsurance receivables",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F41",
+      "relationship_source": ""
+    },
+    "R0380": {
+      "kind": "component",
+      "bucket": "other_assets",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Assets / Receivables (trade, not insurance)",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F42",
+      "relationship_source": ""
+    },
+    "R0390": {
+      "kind": "component",
+      "bucket": "other_assets",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Assets / Own shares (held directly)",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F43",
+      "relationship_source": ""
+    },
+    "R0400": {
+      "kind": "component",
+      "bucket": "other_assets",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Assets / Amounts due in respect of own fund items or initial fund called up but not yet paid in",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F44",
+      "relationship_source": ""
+    },
+    "R0410": {
+      "kind": "component",
+      "bucket": "other_assets",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Assets / Cash and cash equivalents",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F45",
+      "relationship_source": ""
+    },
+    "R0420": {
+      "kind": "component",
+      "bucket": "other_assets",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Assets / Any other assets, not elsewhere shown",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F46",
+      "relationship_source": ""
+    },
+    "R0500": {
+      "kind": "subtotal",
+      "bucket": null,
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Assets / Total assets",
+      "children": [
+        "R0030",
+        "R0040",
+        "R0050",
+        "R0060",
+        "R0070",
+        "R0220",
+        "R0230",
+        "R0270",
+        "R0350",
+        "R0360",
+        "R0370",
+        "R0380",
+        "R0390",
+        "R0400",
+        "R0410",
+        "R0420"
+      ],
+      "coefficients": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F47",
+      "relationship_source": "BV320_1-1 (Business Validation 2.8.2 row 3318)"
+    },
+    "R0510": {
+      "kind": "subtotal",
+      "bucket": "technical_provisions",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Liabilities / Technical provisions - non-life",
+      "children": [
+        "R0520",
+        "R0560"
+      ],
+      "coefficients": [
+        1,
+        1
+      ],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F48",
+      "relationship_source": "BV321_1-1 (Business Validation 2.8.2 row 3335)"
+    },
+    "R0520": {
+      "kind": "subtotal",
+      "bucket": "technical_provisions",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Liabilities / Technical provisions - non-life / Technical provisions - non-life (excluding health)",
+      "children": [
+        "R0530",
+        "R0540",
+        "R0550"
+      ],
+      "coefficients": [
+        1,
+        1,
+        1
+      ],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F49",
+      "relationship_source": "BV322_1-1 (Business Validation 2.8.2 row 3334)"
+    },
+    "R0530": {
+      "kind": "component",
+      "bucket": "technical_provisions",
+      "columns": [
+        "C0010"
+      ],
+      "label": "Liabilities / Technical provisions - non-life / Technical provisions - non-life (excluding health) / Technical provisions calculated as a whole",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F50",
+      "relationship_source": ""
+    },
+    "R0540": {
+      "kind": "component",
+      "bucket": "technical_provisions",
+      "columns": [
+        "C0010"
+      ],
+      "label": "Liabilities / Technical provisions - non-life / Technical provisions - non-life (excluding health) / Best Estimate",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F51",
+      "relationship_source": ""
+    },
+    "R0550": {
+      "kind": "component",
+      "bucket": "technical_provisions",
+      "columns": [
+        "C0010"
+      ],
+      "label": "Liabilities / Technical provisions - non-life / Technical provisions - non-life (excluding health) / Risk margin",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F52",
+      "relationship_source": ""
+    },
+    "R0560": {
+      "kind": "subtotal",
+      "bucket": "technical_provisions",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Liabilities / Technical provisions - non-life / Technical provisions - health (similar to non-life)",
+      "children": [
+        "R0570",
+        "R0580",
+        "R0590"
+      ],
+      "coefficients": [
+        1,
+        1,
+        1
+      ],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F53",
+      "relationship_source": "BV323_1-1 (Business Validation 2.8.2 row 3333)"
+    },
+    "R0570": {
+      "kind": "component",
+      "bucket": "technical_provisions",
+      "columns": [
+        "C0010"
+      ],
+      "label": "Liabilities / Technical provisions - non-life / Technical provisions - health (similar to non-life) / Technical provisions calculated as a whole",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F54",
+      "relationship_source": ""
+    },
+    "R0580": {
+      "kind": "component",
+      "bucket": "technical_provisions",
+      "columns": [
+        "C0010"
+      ],
+      "label": "Liabilities / Technical provisions - non-life / Technical provisions - health (similar to non-life) / Best Estimate",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F55",
+      "relationship_source": ""
+    },
+    "R0590": {
+      "kind": "component",
+      "bucket": "technical_provisions",
+      "columns": [
+        "C0010"
+      ],
+      "label": "Liabilities / Technical provisions - non-life / Technical provisions - health (similar to non-life) / Risk margin",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F56",
+      "relationship_source": ""
+    },
+    "R0600": {
+      "kind": "subtotal",
+      "bucket": "technical_provisions",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Liabilities / Technical provisions - life (excluding index-linked and unit-linked)",
+      "children": [
+        "R0610",
+        "R0650"
+      ],
+      "coefficients": [
+        1,
+        1
+      ],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F57",
+      "relationship_source": "BV324_1-1 (Business Validation 2.8.2 row 3317)"
+    },
+    "R0610": {
+      "kind": "subtotal",
+      "bucket": "technical_provisions",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Liabilities / Technical provisions - life (excluding index-linked and unit-linked) / Technical provisions - health (similar to life)",
+      "children": [
+        "R0620",
+        "R0630",
+        "R0640"
+      ],
+      "coefficients": [
+        1,
+        1,
+        1
+      ],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F58",
+      "relationship_source": "BV325_1-1 (Business Validation 2.8.2 row 3316)"
+    },
+    "R0620": {
+      "kind": "component",
+      "bucket": "technical_provisions",
+      "columns": [
+        "C0010"
+      ],
+      "label": "Liabilities / Technical provisions - life (excluding index-linked and unit-linked) / Technical provisions - health (similar to life) / Technical provisions calculated as a whole",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F59",
+      "relationship_source": ""
+    },
+    "R0630": {
+      "kind": "component",
+      "bucket": "technical_provisions",
+      "columns": [
+        "C0010"
+      ],
+      "label": "Liabilities / Technical provisions - life (excluding index-linked and unit-linked) / Technical provisions - health (similar to life) / Best Estimate",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F60",
+      "relationship_source": ""
+    },
+    "R0640": {
+      "kind": "component",
+      "bucket": "technical_provisions",
+      "columns": [
+        "C0010"
+      ],
+      "label": "Liabilities / Technical provisions - life (excluding index-linked and unit-linked) / Technical provisions - health (similar to life) / Risk margin",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F61",
+      "relationship_source": ""
+    },
+    "R0650": {
+      "kind": "subtotal",
+      "bucket": "technical_provisions",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Liabilities / Technical provisions - life (excluding index-linked and unit-linked) / Technical provisions - life (excluding health and index-linked and unit-linked)",
+      "children": [
+        "R0660",
+        "R0670",
+        "R0680"
+      ],
+      "coefficients": [
+        1,
+        1,
+        1
+      ],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F62",
+      "relationship_source": "BV326_1-1 (Business Validation 2.8.2 row 3315)"
+    },
+    "R0660": {
+      "kind": "component",
+      "bucket": "technical_provisions",
+      "columns": [
+        "C0010"
+      ],
+      "label": "Liabilities / Technical provisions - life (excluding index-linked and unit-linked) / Technical provisions - life (excluding health and index-linked and unit-linked) / Technical provisions calculated as a whole",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F63",
+      "relationship_source": ""
+    },
+    "R0670": {
+      "kind": "component",
+      "bucket": "technical_provisions",
+      "columns": [
+        "C0010"
+      ],
+      "label": "Liabilities / Technical provisions - life (excluding index-linked and unit-linked) / Technical provisions - life (excluding health and index-linked and unit-linked) / Best Estimate",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F64",
+      "relationship_source": ""
+    },
+    "R0680": {
+      "kind": "component",
+      "bucket": "technical_provisions",
+      "columns": [
+        "C0010"
+      ],
+      "label": "Liabilities / Technical provisions - life (excluding index-linked and unit-linked) / Technical provisions - life (excluding health and index-linked and unit-linked) / Risk margin",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F65",
+      "relationship_source": ""
+    },
+    "R0690": {
+      "kind": "subtotal",
+      "bucket": "technical_provisions",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Liabilities / Technical provisions - index-linked and unit-linked",
+      "children": [
+        "R0700",
+        "R0710",
+        "R0720"
+      ],
+      "coefficients": [
+        1,
+        1,
+        1
+      ],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F66",
+      "relationship_source": "BV327_1-1 (Business Validation 2.8.2 row 3314)"
+    },
+    "R0700": {
+      "kind": "component",
+      "bucket": "technical_provisions",
+      "columns": [
+        "C0010"
+      ],
+      "label": "Liabilities / Technical provisions - index-linked and unit-linked / Technical provisions calculated as a whole",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F67",
+      "relationship_source": ""
+    },
+    "R0710": {
+      "kind": "component",
+      "bucket": "technical_provisions",
+      "columns": [
+        "C0010"
+      ],
+      "label": "Liabilities / Technical provisions - index-linked and unit-linked / Best Estimate",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F68",
+      "relationship_source": ""
+    },
+    "R0720": {
+      "kind": "component",
+      "bucket": "technical_provisions",
+      "columns": [
+        "C0010"
+      ],
+      "label": "Liabilities / Technical provisions - index-linked and unit-linked / Risk margin",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F69",
+      "relationship_source": ""
+    },
+    "R0730": {
+      "kind": "component",
+      "bucket": "technical_provisions",
+      "columns": [
+        "C0020"
+      ],
+      "label": "Liabilities / Other technical provisions",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "G70",
+      "relationship_source": "",
+      "scope": "Statutory accounting C0020 only; C0010 is not reportable in the annotated template."
+    },
+    "R0740": {
+      "kind": "component",
+      "bucket": "other_liabilities",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Liabilities / Contingent liabilities",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F71",
+      "relationship_source": ""
+    },
+    "R0750": {
+      "kind": "component",
+      "bucket": "other_liabilities",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Liabilities / Provisions other than technical provisions",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F72",
+      "relationship_source": ""
+    },
+    "R0760": {
+      "kind": "component",
+      "bucket": "other_liabilities",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Liabilities / Pension benefit obligations",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F73",
+      "relationship_source": ""
+    },
+    "R0770": {
+      "kind": "component",
+      "bucket": "other_liabilities",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Liabilities / Deposits from reinsurers",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F74",
+      "relationship_source": ""
+    },
+    "R0780": {
+      "kind": "component",
+      "bucket": "deferred_tax_liabilities",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Liabilities / Deferred tax liabilities",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F75",
+      "relationship_source": ""
+    },
+    "R0790": {
+      "kind": "component",
+      "bucket": "other_liabilities",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Liabilities / Derivatives",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F76",
+      "relationship_source": ""
+    },
+    "R0800": {
+      "kind": "component",
+      "bucket": "other_liabilities",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Liabilities / Debts owed to credit institutions",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F77",
+      "relationship_source": ""
+    },
+    "R0810": {
+      "kind": "component",
+      "bucket": "other_liabilities",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Liabilities / Financial liabilities other than debts owed to credit institutions",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F78",
+      "relationship_source": ""
+    },
+    "R0820": {
+      "kind": "component",
+      "bucket": "other_liabilities",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Liabilities / Insurance & intermediaries payables",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F79",
+      "relationship_source": ""
+    },
+    "R0830": {
+      "kind": "component",
+      "bucket": "other_liabilities",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Liabilities / Reinsurance payables",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F80",
+      "relationship_source": ""
+    },
+    "R0840": {
+      "kind": "component",
+      "bucket": "other_liabilities",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Liabilities / Payables (trade, not insurance)",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F81",
+      "relationship_source": ""
+    },
+    "R0850": {
+      "kind": "subtotal",
+      "bucket": "other_liabilities",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Liabilities / Subordinated liabilities",
+      "children": [
+        "R0860",
+        "R0870"
+      ],
+      "coefficients": [
+        1,
+        1
+      ],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F82",
+      "relationship_source": "BV328_1-1 (Business Validation 2.8.2 row 3313)"
+    },
+    "R0860": {
+      "kind": "component",
+      "bucket": "other_liabilities",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Liabilities / Subordinated liabilities / Subordinated liabilities not in Basic Own Funds",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F83",
+      "relationship_source": ""
+    },
+    "R0870": {
+      "kind": "component",
+      "bucket": "other_liabilities",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Liabilities / Subordinated liabilities / Subordinated liabilities in Basic Own Funds",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F84",
+      "relationship_source": ""
+    },
+    "R0880": {
+      "kind": "component",
+      "bucket": "other_liabilities",
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Liabilities / Any other liabilities, not elsewhere shown",
+      "children": [],
+      "coefficients": [],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F85",
+      "relationship_source": ""
+    },
+    "R0900": {
+      "kind": "subtotal",
+      "bucket": null,
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Liabilities / Total liabilities",
+      "children": [
+        "R0510",
+        "R0600",
+        "R0690",
+        "R0740",
+        "R0750",
+        "R0760",
+        "R0770",
+        "R0780",
+        "R0790",
+        "R0800",
+        "R0810",
+        "R0820",
+        "R0830",
+        "R0840",
+        "R0850",
+        "R0880"
+      ],
+      "coefficients": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F86",
+      "relationship_source": "BV329_1-1 (Business Validation 2.8.2 row 3312)"
+    },
+    "R1000": {
+      "kind": "subtotal",
+      "bucket": null,
+      "columns": [
+        "C0010",
+        "C0020"
+      ],
+      "label": "Excess of assets over liabilities",
+      "children": [
+        "R0500",
+        "R0900"
+      ],
+      "coefficients": [
+        1,
+        -1
+      ],
+      "source_file": "eiopa_sii_2.8.2_annotated.xlsx",
+      "source_sheet": "S.02.01.01.01",
+      "source_cell": "F87",
+      "relationship_source": "BV330_1-1, Business Validation 2.8.2 K3311"
+    }
+  }
+}

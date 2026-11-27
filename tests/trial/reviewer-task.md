@@ -1,0 +1,3 @@
+# Reviewer task — initial pre-sign-off triage
+
+You are reviewing two consecutive annual Solvency II packages for one fictional solo life undertaking. Examine the supplied source workbooks and the comparison aid assigned for this run. Prepare the **first written list of issues for follow-up before sign-off**. For each issue, state the observed figures or metadata, their periods and source locations, the difference or status, and the question you would put to the reporting team. Record uncertainty; do not infer an unreported cause. Work alone. Submit the list when your initial triage is complete. You will receive a second case with the same task after this one; no feedback is given between runs.

@@ -1,0 +1,78 @@
+{
+  "requirements": ["R-008", "R-022", "D3", "D8"],
+  "discrepancy": "left minus right; the tolerance boundary is inclusive",
+  "tables": {
+    "BS": ["S.02.01.01.01", "S.02.01.02.01"],
+    "TP": ["S.12.01.01.01", "S.12.01.02.01"],
+    "RR": ["S.23.01.01.02", "S.23.01.01.02"],
+    "OF": ["S.23.01.01.01", "S.23.01.01.01"],
+    "SCR": ["S.25.01.01.02", "S.25.01.21.02"]
+  },
+  "table_columns": ["supervisory", "public_disclosure"],
+  "operand_syntax": "table key, row, column. Sum the cells on each side unless right_operation is divide. A leading minus subtracts that operand. Select the mapped data-point dimensions and coordinate context.",
+  "checks": [
+    {
+      "id": "excess_consistency", "label": "Excess of assets over liabilities",
+      "left": ["BS R1000 C0010"], "right": ["RR R0700 C0060"],
+      "tolerance": "money", "withholds": ["excess", "excess_to_eligible"],
+      "message": "Reconcile balance-sheet excess with the excess in the reconciliation reserve.",
+      "source": "VERIFICATION.md §2, identical data point 7142772"
+    },
+    {
+      "id": "health_slt_tp", "label": "Health SLT technical provisions",
+      "left": ["BS R0610 C0010"], "right": ["TP R0200 C0210"],
+      "tolerance": "money", "withholds": ["health_slt_net_tp"],
+      "message": "Reconcile health SLT total provisions on the same valuation basis.",
+      "source": "VERIFICATION.md §2, identical data point 7142834"
+    },
+    {
+      "id": "health_slt_recoverables", "label": "Health SLT reinsurance recoverables",
+      "left": ["BS R0320 C0010"], "right": ["TP R0020 C0210", "TP R0080 C0210"],
+      "tolerance": "money", "withholds": ["health_slt_net_tp", "health_slt_recoverables"],
+      "message": "Reconcile health SLT recoverables for contracts valued as a whole and on a best-estimate basis.",
+      "source": "VERIFICATION.md §2, BV379_1-1; public operands require verified equivalent data points"
+    },
+    {
+      "id": "linked_recoverables", "label": "Linked reinsurance recoverables",
+      "left": ["BS R0340 C0010"],
+      "right": ["TP R0020 C0030", "TP R0080 C0040", "TP R0080 C0050", "TP R0020 C0120", "TP R0080 C0120"],
+      "tolerance": "money", "withholds": ["linked_recoverables", "linked_pairing"],
+      "message": "Include both guarantee groups, whole provisions and accepted linked reinsurance.",
+      "public_gap": "Public S.12.01 omits the supervisory accepted-reinsurance split.",
+      "source": "VERIFICATION.md §2, BV381_1-1"
+    },
+    {
+      "id": "life_and_health_tp", "label": "Whole life and health SLT provisions",
+      "left": ["BS R0600 C0010", "BS R0690 C0010"], "right": ["TP R0200 C0150", "TP R0200 C0210"],
+      "tolerance": "money", "withholds": ["whole_life_tp_consistency"],
+      "message": "The listed candidate cells require an independently verified common basis.",
+      "gap": "Whole-life and health coverage, transitionals and accepted reinsurance have not been verified.",
+      "source": "VERIFICATION.md §2; BV1535 and BV1527 are deactivated"
+    },
+    {
+      "id": "nonlinked_life_recoverables", "label": "Non-linked life reinsurance recoverables",
+      "left": ["BS R0330 C0010"],
+      "right": ["TP R0020 C0150", "TP R0080 C0150", "-TP R0020 C0030", "-TP R0080 C0040", "-TP R0080 C0050", "-TP R0020 C0120", "-TP R0080 C0120"],
+      "tolerance": "money", "withholds": ["nonlinked_recoverables", "life_net_tp"],
+      "message": "Subtract both direct linked guarantee groups and accepted linked recoverables from the full life recoverables.",
+      "public_gap": "Public S.12.01 lacks the accepted linked C0120 operands of BV380_1-1.",
+      "source": "VERIFICATION.md §2, BV380_1-1"
+    },
+    {
+      "id": "scr", "label": "Total SCR",
+      "left": ["OF R0580 C0010"], "right": ["SCR R0220 C0100"],
+      "tolerance": "money", "withholds": ["scr_modules"],
+      "message": "Require the S.25 whole-undertaking Article 112 context.",
+      "public_gap": "BV871-4 identifies the supervisory Article 112 selection. The public context has not been verified.",
+      "source": "VERIFICATION.md §2, BV871-4 (annual solo), S.25 Z0010 Article 112 = No (x0)"
+    },
+    {
+      "id": "ratio", "label": "Reported solvency ratio",
+      "left": ["OF R0620 C0010"], "right": ["OF R0540 C0010", "OF R0580 C0010"],
+      "right_operation": "divide", "tolerance": "reported_ratio_precision",
+      "withholds": ["solvency_ratio"],
+      "message": "Compare reported coverage with eligible own funds divided by positive SCR at reported ratio precision.",
+      "source": "VERIFICATION.md §§2,6, BV87-1"
+    }
+  ]
+}

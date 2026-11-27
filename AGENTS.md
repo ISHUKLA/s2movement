@@ -25,5 +25,6 @@ The person reading the output is a Head of Actuarial Function deciding whether t
 ## Commands
 
 - `make setup` creates the development environment from the lockfile.
-- `make check` checks the lockfile, lint, formatting, types and tests.
+- `make check` verifies the benchmark manifest, lockfile, lint, formatting, strict types and tests, including formula recalculation and network isolation. It requires LibreOffice 26.2.5.2 and macOS `sandbox-exec`.
 - `make format` applies Ruff formatting.
+- `make fetch-taxonomy` explicitly downloads and checksum-verifies the public EIOPA 2.8.2 taxonomy package.

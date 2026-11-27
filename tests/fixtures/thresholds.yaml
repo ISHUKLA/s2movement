@@ -1,0 +1,175 @@
+{
+  "version": "step4-proposal-1",
+  "scope": {
+    "taxonomy": "2.8.2",
+    "currency": "EUR",
+    "variant": "supervisory"
+  },
+  "difference": "closing_minus_opening",
+  "comparison_precision": "before_display_rounding",
+  "missing_operand": "unavailable_name_period_template_and_measure",
+  "incomparable_basis": "indeterminate",
+  "rules": {
+    "movement_money": {
+      "measures": [
+        "tp_components_by_lob",
+        "linked_components",
+        "excess_bridge_components",
+        "available_and_eligible_own_funds_by_tier",
+        "own_funds_adjustments",
+        "scr_and_modules",
+        "s22_tp_impacts_individually",
+        "s05_gross_written_and_incurred_by_lob"
+      ],
+      "statistic": "absolute_signed_movement",
+      "threshold": {
+        "operator": ">",
+        "absolute_eur": 100000,
+        "fraction_of_abs_opening_component": "0.05",
+        "combine": "max"
+      },
+      "zero_opening": "use_absolute_floor",
+      "rationale": "Five percent identifies a substantial change in the item and the floor limits noise on small balances."
+    },
+    "movement_ratio": {
+      "measures": [
+        "solvency_ratio_change",
+        "own_funds_effect",
+        "scr_effect",
+        "interaction_effect"
+      ],
+      "statistic": "absolute_signed_percentage_points",
+      "threshold": {
+        "operator": ">",
+        "percentage_points": "2"
+      },
+      "denominator": "none_after_conversion_to_percentage_points",
+      "nonpositive_scr": "indeterminate",
+      "rationale": "Two points measures the effect on coverage on the same scale at every starting ratio."
+    },
+    "measure_status": {
+      "measures": [
+        "va_applied",
+        "ma_applied",
+        "tmtp_applied",
+        "tmir_applied"
+      ],
+      "trigger": "known_boolean_changed_in_either_direction",
+      "denominator": "none",
+      "equal": "no_flag",
+      "unknown": "indeterminate",
+      "rationale": "Any change of basis matters even when its monetary effect is small."
+    },
+    "measure_impact": {
+      "measures": [
+        "tmtp_tp_impact",
+        "tmir_tp_impact",
+        "va_tp_impact",
+        "ma_tp_impact"
+      ],
+      "statistic": "absolute_change_in_each_signed_scenario_impact_eur",
+      "threshold": {
+        "operator": ">",
+        "absolute_eur": 100000,
+        "fraction_of_abs_opening_with_measures_tp": "0.01",
+        "combine": "max"
+      },
+      "zero_opening_tp": "use_absolute_floor",
+      "rationale": "One percent of opening TP measures the size of a scenario change against the business affected."
+    },
+    "linked_materiality": {
+      "measure": "linked_assets_relative_to_total_assets_same_date",
+      "trigger": "either_date_qualifies",
+      "threshold": {
+        "operator": ">",
+        "absolute_eur": 100000,
+        "fraction_of_total_assets": "0.05",
+        "combine": "max"
+      },
+      "nonpositive_total_assets": "indeterminate_for_date",
+      "rationale": "Five percent captures a meaningful linked portfolio including one in run-off or newly written."
+    },
+    "linked_divergence": {
+      "prerequisite": "material_linked_business_and_comparable_scope",
+      "statistic": "abs_delta_linked_assets_plus_delta_linked_recoverables_minus_delta_linked_tp_whole_minus_delta_linked_gross_bel_minus_delta_linked_risk_margin",
+      "threshold": {
+        "operator": ">",
+        "absolute_eur": 100000,
+        "fraction_of_abs_opening_linked_assets": "0.02",
+        "combine": "max"
+      },
+      "zero_opening_linked_assets": "use_absolute_floor",
+      "rationale": "Two percent of the opening portfolio draws attention to divergence above ordinary small differences."
+    },
+    "tier_constraints": {
+      "measures": [
+        "restricted_tier1",
+        "tier3",
+        "tier2_plus_tier3"
+      ],
+      "limits": [
+        "article82_3",
+        "article82_1_b",
+        "article82_1_c"
+      ],
+      "source": "mappings/2.8.2/legal_limits.csv",
+      "trigger": "evidenced_constraint_at_either_date",
+      "denominator": [
+        "total_tier1",
+        "scr",
+        "scr"
+      ],
+      "comparisons": [
+        "< 0.20",
+        "< 0.15",
+        "<= 0.50"
+      ],
+      "zero_or_ambiguous": "indeterminate",
+      "rationale": "Report each evidenced constraint using its legal operator and reported precision without a configurable materiality discount."
+    },
+    "lac_dt_direction": {
+      "signed_adjustment": "reported_lac_dt",
+      "benefit_magnitude": "minus_signed_adjustment",
+      "pre_tax": "final_scr_minus_signed_lac_dt",
+      "trigger": "opposite_nonzero_signs_of_benefit_change_and_pre_tax_change",
+      "threshold_each_abs_change": {
+        "operator": ">",
+        "eur": 100000
+      },
+      "denominator": "none",
+      "zero_change": "no_flag",
+      "rationale": "Material loss of relief while the pre-tax requirement rises merits a joint review and the reverse pattern is also informative."
+    },
+    "premium_claim_scale": {
+      "measures": [
+        "annual_gross_written_premiums",
+        "annual_gross_claims_incurred"
+      ],
+      "scope": "same_direct_lob_and_basis_across_dates",
+      "statistic": "larger_absolute_annual_amount_over_smaller_absolute_annual_amount",
+      "threshold": {
+        "operator": ">",
+        "factor": "100",
+        "also_abs_signed_change_eur_gt": 100000
+      },
+      "zero_smaller": "indeterminate_if_one_zero_no_flag_if_both_zero",
+      "rationale": "A factor over 100 can expose a thousandfold unit error in either direction while the floor excludes tiny comparators driving trivial changes."
+    },
+    "premium_claim_vs_bel": {
+      "measures": [
+        "annual_gross_written_premiums",
+        "annual_gross_claims_incurred"
+      ],
+      "scope": "closing_flow_and_delta_gross_bel_same_direct_lob",
+      "statistic": "absolute_closing_reported_annual_amount",
+      "threshold": {
+        "operator": ">",
+        "absolute_eur": 100000,
+        "multiple_of_abs_delta_gross_bel": "5",
+        "combine": "max"
+      },
+      "zero_bel_change": "use_absolute_floor_and_show_ratio_undefined",
+      "rationale": "A fivefold difference prompts review of offsetting movements without interpreting accounting measures as cash."
+    }
+  }
+}

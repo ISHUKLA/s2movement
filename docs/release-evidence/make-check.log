@@ -1,0 +1,21 @@
+.venv/bin/python -B tests/fixtures/bench_integrity.py
+20 frozen benchmark files verified. Manifest SHA-256 eb073b5d400ad380d518bcb40ede0cd6e5ae5aa160d0f419bf76d8987e78a044
+uv sync --check --locked --group dev --offline --no-cache --no-python-downloads
+Would use project environment at: .venv
+Resolved 53 packages in 28ms
+Checked 52 packages in 24ms
+Would make no changes
+.venv/bin/ruff check --no-cache src tests scripts
+All checks passed!
+.venv/bin/ruff format --check --no-cache src tests scripts
+52 files already formatted
+.venv/bin/mypy --no-incremental --cache-dir=/dev/null src tests scripts
+Success: no issues found in 46 source files
+.venv/bin/python -B -m pytest -p no:cacheprovider -q
+........................................................................ [ 19%]
+........................................................................ [ 39%]
+........................................................................ [ 58%]
+........................................................................ [ 78%]
+........................................................................ [ 98%]
+.......                                                                  [100%]
+367 passed in 414.32s (0:06:54)

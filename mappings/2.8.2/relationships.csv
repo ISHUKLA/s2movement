@@ -1,0 +1,5 @@
+rule,status,table,columns,context,target_row,expression_same_column,meaning,source,source_location
+BV216-1,active,S.05.01.01.02,C0210;C0220;C0230;C0240;C0250;C0260;C0270;C0280;C0300,Z0001,R1500,R1410 - R1420,written premiums net = gross - reinsurers share,eiopa_sii_2.8.2_validations.xlsx,Business Validation 2.8.2 row 1605
+BV428-1,active,S.05.01.01.02,C0210;C0220;C0230;C0240;C0250;C0260;C0270;C0280;C0300,Z0001,R1600,R1510 - R1520,earned premiums net = gross - reinsurers share,eiopa_sii_2.8.2_validations.xlsx,Business Validation 2.8.2 row 1574
+BV429-1,active,S.05.01.01.02,C0210;C0220;C0230;C0240;C0250;C0260;C0270;C0280;C0300,Z0001,R1700,R1610 - R1620,claims incurred net = gross - reinsurers share,eiopa_sii_2.8.2_validations.xlsx,Business Validation 2.8.2 row 1573
+BV330_1-1,active,S.02.01.01.01,C0010,s2c_dim:VG=s2c_AM:x80,R1000,R0500 - R0900,excess of assets over liabilities = total assets - total liabilities,eiopa_sii_2.8.2_validations.xlsx,Business Validation 2.8.2 row 3311

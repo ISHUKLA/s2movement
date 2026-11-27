@@ -1,0 +1,14 @@
+{
+  "confirmations": [
+    {
+      "evidence": "opening.xlsx Metadata!B11:B13 and closing.xlsx Metadata!B11:B13.",
+      "factor": "1000",
+      "file_id": "opening.xlsx",
+      "period": "opening",
+      "reason": "Opening reports whole thousands of EUR. Convert to EUR for this comparison.",
+      "reviewer": "Synthetic benchmark reviewer",
+      "target_unit_scale": "1"
+    }
+  ],
+  "schema_version": "0.1"
+}

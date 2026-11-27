@@ -1,0 +1,14 @@
+table,row,column,legal_display_code,meaning,xbrl_member,xbrl_source,legal_source
+S.01.02.01.01,R0130,C0010,1,standard formula,s2c_AP:x3,eiopa_dpm_dictionary_2.8.2.xlsx s2c_AP row 40,eu_2023_894_original.pdf Annex II S.01.02 PDF pp. 616–617
+S.01.02.01.01,R0130,C0010,2,partial internal model,s2c_AP:x2,eiopa_dpm_dictionary_2.8.2.xlsx s2c_AP row 29,eu_2023_894_original.pdf Annex II S.01.02 PDF pp. 616–617
+S.01.02.01.01,R0130,C0010,3,full internal model,s2c_AP:x1,eiopa_dpm_dictionary_2.8.2.xlsx s2c_AP row 3,eu_2023_894_original.pdf Annex II S.01.02 PDF pp. 616–617
+S.01.02.01.01,R0150,C0010,1,reporting activity by RFF,s2c_PU:x4,eiopa_dpm_dictionary_2.8.2.xlsx s2c_PU row 40,eu_2023_894_original.pdf Annex II S.01.02 PDF pp. 616–617
+S.01.02.01.01,R0150,C0010,2,not reporting activity by RFF,s2c_PU:x17,eiopa_dpm_dictionary_2.8.2.xlsx s2c_PU row 15,eu_2023_894_original.pdf Annex II S.01.02 PDF pp. 616–617
+S.01.02.01.01,R0170,C0010,1,use of matching adjustment,s2c_PU:x51,eiopa_dpm_dictionary_2.8.2.xlsx s2c_PU row 53,eu_2023_894_original.pdf Annex II S.01.02 PDF pp. 616–617
+S.01.02.01.01,R0170,C0010,2,no use of matching adjustment,s2c_PU:x52,eiopa_dpm_dictionary_2.8.2.xlsx s2c_PU row 54,eu_2023_894_original.pdf Annex II S.01.02 PDF pp. 616–617
+S.01.02.01.01,R0180,C0010,1,use of volatility adjustment,s2c_AP:x7,eiopa_dpm_dictionary_2.8.2.xlsx s2c_AP row 82,eu_2023_894_original.pdf Annex II S.01.02 PDF pp. 616–617
+S.01.02.01.01,R0180,C0010,2,no use of volatility adjustment,s2c_AP:x8,eiopa_dpm_dictionary_2.8.2.xlsx s2c_AP row 95,eu_2023_894_original.pdf Annex II S.01.02 PDF pp. 616–617
+S.01.02.01.01,R0190,C0010,1,use of transitional on risk-free rate,s2c_AP:x9,eiopa_dpm_dictionary_2.8.2.xlsx s2c_AP row 106,eu_2023_894_original.pdf Annex II S.01.02 PDF pp. 616–617
+S.01.02.01.01,R0190,C0010,2,no use of transitional on risk-free rate,s2c_AP:x10,eiopa_dpm_dictionary_2.8.2.xlsx s2c_AP row 4,eu_2023_894_original.pdf Annex II S.01.02 PDF pp. 616–617
+S.01.02.01.01,R0200,C0010,1,use of transitional on technical provisions,s2c_AP:x11,eiopa_dpm_dictionary_2.8.2.xlsx s2c_AP row 15,eu_2023_894_original.pdf Annex II S.01.02 PDF pp. 616–617
+S.01.02.01.01,R0200,C0010,2,no use of transitional on technical provisions,s2c_AP:x12,eiopa_dpm_dictionary_2.8.2.xlsx s2c_AP row 21,eu_2023_894_original.pdf Annex II S.01.02 PDF pp. 616–617

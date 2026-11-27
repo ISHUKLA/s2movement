@@ -1,4 +1,8 @@
-# Step 0.0 — repository scaffold
+# Progress
+
+**Current: Revision 3 prompt sequence uses the owner's approved decisions, 27 November 2026.** Start with [Session 1 — Baseline and execution register](prompting-algorithm-rev3.md). The [decision record](decisions.md#revision-3--excel-acceptance-and-actuarial-aoc--27-november-2026) contains the explicit D11–D22 approval and the additional mandatory AoC trial before v1 release. Exact Excel targets/operator and new numerical bounds remain approval gates before dependent work. Microsoft Excel/AoC acceptance and the human trials have not been measured. Earlier entries are historical and do not establish Revision 3 acceptance.
+
+## Step 0.0 — repository scaffold
 
 Complete. The repository contains the installable `s2movement` package, its locked development environment, one import test and the directory guides for later sessions.
 
@@ -32,7 +36,7 @@ The working copy passed lint, formatting and type checks; pytest reproduced the 
 
 ### Standing instructions from the owner
 
-- [The owner-reviewed specification, Revision 2](spec.md), governs when it differs from the user story. Requirement IDs are stable and must be named in tests, commit messages and this progress log.
+- [The governing specification](spec.md), now Revision 3, supersedes the user story where it differs. The owner's 27 November D11–D22 answers are recorded in [decisions.md](decisions.md); they supersede the specification's earlier pending labels while keeping exact targets/new numerical allowances gated. Requirement IDs are stable and must be named in tests, commit messages and this progress log.
 - **D3:** Use one reporting unit for monetary comparisons and, after confirmed scale conversion, one unit of the coarser source precision. For the S.23.01 reported solvency ratio, use one unit in the last reported decimal place. Every comparison shows its tolerance and signed discrepancy, whether it passes or fails.
 - **D2:** An acknowledgement cannot clear a hard stop. Only a metadata correction supported by source evidence or a confirmed scale conversion reruns the gate. Record the correction or conversion in the outputs.
 - **D6 and D8:** Show reported figures and arithmetic reproducible from them. Mark an unsupported split or conclusion “Unavailable” or “indeterminate”. If `[Period | Template | Row | Col]` does not identify a single fact, include the context that does.
@@ -189,3 +193,65 @@ The next release work is to resolve the sourced mapping and tier-treatment gaps,
 Final verification for this report and trial kit: `make check` exited 0, verified all 20 frozen benchmark files with the same manifest checksum, found no lockfile/environment changes, passed Ruff and strict mypy, and reported **367 passed in 414.32s**. Its actual output is saved at `docs/release-evidence/make-check.log`. After regenerating the trial packages with valid-length fictional LEIs, read-only inspection confirmed both 608-cell packages, A's closing SCR discrepancy of −EUR 6 million and B's opening discrepancy of +EUR 6 million. The trial formula verifier again reported a 50% median and four 8/8 detection rates on a disposable synthetic control. These controls are not human-trial results.
 
 The separate trial `SHA256SUMS` verified all 17 case, output, key and scoring-template files with `shasum -a 256 -c SHA256SUMS`; final Ruff and strict mypy on the regenerated builder also passed. This checksum file is distinct from the frozen Step 4 benchmark manifest.
+
+## Revision 3 specification session · 27 November 2026
+
+Read AGENTS.md, the complete Revision 2 specification and decision record, user story, decisions, architecture, progress, commentary contract and release report; inspected the workbook writer and its recalculation, benchmark and Word-pagination tests. Revised only `docs/spec.md`, `docs/decisions.md` and this log. The user story, AGENTS/Makefile, source code, tests, prompts, mappings and both frozen benchmark/trial populations remain unchanged. No prompting algorithm was written.
+
+R-038–R-041 define Microsoft 365 Excel normal-open, full-recalculate, formula/status/precision and save/re-read acceptance, native Excel input cases and a transferable evidence bundle. R-042–R-050 define insurer AoC measures/segments/categories and actual run order, independently stated starts/ends and provenance, extended ledger citations, controls/residual, conditional reported-data computations, full/proxy/missing SCR, tiering and exact per-step ratio terms, live tabs/JSON, attributed causal language and separate consent. R-051–R-055 cover proposed S.29 cross-checks, new independently frozen tests, release reporting, the separate AoC utility task and the pending-decision implementation gate. Existing IDs and original story references were retained; D10 records the confirmed purpose/Excel change and D11–D22 record recommendations awaiting the owner.
+
+The audit found the LibreOffice pin in the shared test helper, its callers, the diagnostic scorer's engine default, Word-to-PDF page counting and the standing/architecture/benchmark/handoff documentation. The production writer uses XlsxWriter and explicit Python-computed numeric/text caches; it does not open/save through LibreOffice. Test/scorer recalculation writes temporary copies. No Excel repair cause or Excel acceptance was established. The new spec records this distinction and all current-build conflicts without changing the existing build or historical release report.
+
+Official-source checks informed the proposal: Microsoft documents CalculateFull, date systems and shared strings; XlsxWriter documents explicit caches; Directive Annex IV and Article 87 identify the legal aggregation evidence that must precede Euler allocation. The locally checksummed 2023/894 PDF, OJ/PDF pp. 722–723, states the S.13 projection limitations, grouped tail and currency conversion, so a curve-based unwind cannot silently be labelled an exact BEL/RM step. Recommendations and provenance links are in the spec. No matrix coefficients or new S.13/S.29 codes were guessed or populated.
+
+The original endpoint D5 decomposition, fact ledger, cited gate and bridge definitions/residuals are reuse candidates; they do not acquire new causality claims. The commentary gates need the previously identified repairs as well as the AoC exception and separate provider permission. The historical R-035 kit tests triage, not AoC utility; a new fair AoC task/key/targets await D21. The original failed release metrics remain failed.
+
+Verification: `make check` exited 0 and reported **367 passed in 428.92s (0:07:08)**, after the frozen-file check, unchanged offline locked environment, Ruff and strict mypy passed. This is the existing LibreOffice-based suite, not Excel acceptance or an AoC implementation result. Documentation checks confirmed one row for each R-001–R-055, D10 plus twelve pending D11–D22 records, existing local link targets and no whitespace errors. All 114 fingerprinted protected files (including source, tests/fixtures/trial, mappings, prompts, scripts, user story, architecture, commentary contract, historical release report, AGENTS/Makefile and dependency files) were byte-identical. The original benchmark manifest remains `eb073b5d400ad380d518bcb40ede0cd6e5ae5aa160d0f419bf76d8987e78a044`; Revision 2 is present at HEAD in Git history. Only the three requested documentation files changed. The next action is the owner's answers to D11–D22; the second session records them and writes the prompting algorithm. No dependent numerical choice is approved by this draft.
+
+## Revision 3 prompting algorithm · 27 November 2026
+
+At the owner's instruction to continue without reconstructing the decision answers, wrote [the Revision 3 session sequence](prompting-algorithm-rev3.md). Read the governing instructions, complete specification and decision record, decisions, progress, architecture and release report, and checked the earlier prompt sequence's repair/close-out conventions. Work remains in `/Users/coralieroland/Documents/s2movement-handoff-2026-11-26`; the original repository was not edited.
+
+The document contains 24 self-contained session prompts: 20 for the proposed v1 scope and four conditional v1.1 sessions after the v1 release gate. Every prompt specifies its goal, R-IDs, allowed files, tests/checks first, stop conditions and exit gate; the coverage index includes R-001–R-055. It includes the repair, close-out and specifically owner-approved benchmark-correction templates. This is planning work, not execution of those sessions.
+
+The sequence adds explicit prerequisite sessions for the unfinished citation validator, deterministic flags/abstentions and XBRL adapter. It places the AoC contract before independent oracle authoring, and seals/obtains owner sign-off on new expected values before product-based scoring. Source-independent oracle sessions cannot run `make check`, because it imports the product; a separate source-aware maintainer supplies the required actual local-check evidence after sealing. New blinded AoC trial inputs/keys also require an independent authoring handoff.
+
+Each Excel-dependent step names the approved operator's role, local/remote execution route, hashed candidate and returned evidence, verification/import into `docs/release-evidence/excel/`, and actual-results entry here. Missing Excel or returned evidence remains open. Historical LibreOffice passes, synthetic controls and cached values cannot certify Excel or human utility. The final independent reviewer recalculates from source inputs before reading implementation/results, then inspects code and requires the full final-candidate Excel run.
+
+D11–D22 have not been changed into approved answers. The recommendations are explicitly the planning branch authorized for this document. The execution register in Session 1 collects existing answers/evidence and sends only consequential outstanding choices to the dependent session. Exact Excel builds/operator, any new Euler engineering bound or projection error budget, numerical alternatives and release/trial scope must be recorded before the dependent implementation/acceptance. The S.13/curve approximation stays in the conditional v1.1 branch under the proposed split. No credential was read or used, and no live provider call was made.
+
+Verification: `make check` exited **0**. The original 20-file benchmark integrity check, offline locked environment, Ruff lint and formatting (52 files), and strict mypy passed. Actual final output:
+
+```text
+Success: no issues found in 46 source files
+.venv/bin/python -B -m pytest -p no:cacheprovider -q
+367 passed in 441.39s (0:07:21)
+```
+
+This is the existing LibreOffice-based suite, not Revision 3 Excel/AoC acceptance. Read-only documentation checks verified all 24 prompts' required fields, all 55 requirement IDs in the coverage index, and 27 balanced prompt blocks including the reusable templates. All **117** protected source/test/mapping/script/prompt and governing-document fingerprints are unchanged, including spec, decisions and the historical release report. The original benchmark manifest remains `eb073b5d400ad380d518bcb40ede0cd6e5ae5aa160d0f419bf76d8987e78a044`. `git diff --check` and the new document's whitespace check passed.
+
+**First step to run: Session 1 — Baseline and execution register.** This authoring session changed only `docs/prompting-algorithm-rev3.md` and this progress log. No source, test, mapping, frozen population, dependency or standing-instruction changes were made; no commit, push or release was performed.
+
+## Owner-approved Revision 3 session sequence · 27 November 2026
+
+The owner answered **“Approve this basis (Recommended)”** to adopting the recommended D11–D22 choices while retaining exact Excel builds and new numerical tolerances as approval gates before dependent work. The owner separately answered **“Required before v1 release (Recommended)”** for the AoC practising-actuary trial. Recorded both actual answers and their scope in `docs/decisions.md`, then reconciled `docs/prompting-algorithm-rev3.md`. The earlier draft-only/pending entries above remain historical. No answers are inferred from a generic instruction to continue.
+
+The sequence now uses the approved release split: v1 has Excel-certified reconciliation and insurer-input AoC, and the approximate S.13/RFR unwind is in v1.1 after the v1 release gate. Both the original R-035 triage trial and the separate R-054/D21 AoC trial are mandatory before v1 release. The latter has eight reviewers, the balanced crossover, a median reduction of at least 35%, detection at least the manual Excel AoC baseline for each defect class, identical underlying inputs, blinded scoring and owner sign-off. No human results or benchmark sign-offs were created.
+
+Retained 24 self-contained prompts, each with goal, R-IDs, allowed files, tests/checks first, stop conditions and the actual-results exit gate, plus the repair, close-out and approved benchmark-correction templates. The extra prerequisite sessions address unfinished source verification, citation validation, flags and XBRL rather than assuming the current failed release is complete. The independent Excel/AoC oracle is authored/frozen before implementation scoring, in a session that does not read/import `src/`; a separate maintainer supplies its `make check` evidence. Fresh AoC trial inputs/key are also independently authored. Existing frozen triage materials are preserved, with new candidate delivery copies separately manifested.
+
+Every relevant step requires the named Excel operator's full calculation/save/re-read run, a hashed evidence bundle and maintainer verification/import under `docs/release-evidence/excel/`. Missing or failed evidence remains open/failing. Word body acceptance also names its operator and evidence. The independent review seals its source-based arithmetic before reading expected values or implementation/results, then requires the full final-candidate Excel run.
+
+Remaining approval gates are concrete: exact Excel machines/builds/channels/operator, any new Euler engineering bound/exceptional numerical treatment or changed precision convention, and the detailed v1.1 proxy basis/error budget. Each is resolved before its dependent implementation/freeze/acceptance. The approved policy decisions must not be asked again. New benchmark keys/checksums and measured trial results still require their own owner sign-offs; approving this plan does not approve a live provider transmission.
+
+**Verification for this approval update:** `make check` exited **0**. It verified all 20 frozen benchmark files with unchanged manifest SHA-256 `eb073b5d400ad380d518bcb40ede0cd6e5ae5aa160d0f419bf76d8987e78a044`, found no offline lockfile/environment changes, passed Ruff lint/formatting (52 files) and strict mypy, then reported:
+
+```text
+Success: no issues found in 46 source files
+.venv/bin/python -B -m pytest -p no:cacheprovider -q
+367 passed in 450.74s (0:07:30)
+```
+
+This is the existing LibreOffice-based suite, not Excel, AoC or human-trial acceptance. Read-only documentation checks verified all 24 prompts' required fields, the complete R-001–R-055 coverage index, 27 balanced prompt blocks and the explicit dual-trial v1 release gate. All **116** protected files are byte-identical, including the governing specification and historical release report; only the three authorized documentation files are edited. `git diff --check` and all three changed files' whitespace/EOF checks passed. No new benchmark was built or scored, and none of the future implementation sessions was executed.
+
+**First step to run remains Session 1 — Baseline and execution register.** It consumes the recorded approvals instead of asking the owner to reconstruct them. This session changed only `docs/decisions.md`, `docs/prompting-algorithm-rev3.md` and this log, in the handoff repository. The original repository, governing specification, source, tests, mappings, frozen benchmarks/trial artifacts, dependencies and standing instructions are unchanged. No commit, push, provider call or feature implementation was performed.
